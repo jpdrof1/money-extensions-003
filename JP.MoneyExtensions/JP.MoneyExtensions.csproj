@@ -4,6 +4,26 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>JP.MoneyExtensions.003</PackageId>
+    <Version>1.0.0</Version>    
+    <License>MIT</License>
+    <Authors>João Pedro</Authors>
+    <Company>JPCompany</Company>
+    <PackageDescription>Extension to convert decimal types to integer</PackageDescription>
+    <Description>Extension to convert decimal types to integer</Description>
+    <RepositoryUrl>https://github.com/jpdrof1/money-extensions-003</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/jpdrof1/money-extensions-003</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>Money;int;decimal;converter</PackageTags>
+    <ReleaseNotes>Adjustmends on the variable names.</ReleaseNotes>
+    <Title>JP.MoneyExtensions</Title>
+    <Summary>Extension to convert decimal types to integer.</Summary> 
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Media\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>

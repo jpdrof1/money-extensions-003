@@ -9,6 +9,9 @@ public class MoneyExtensionsTests
         decimal value = 276.47m;
         int result = value.ToCents();
 
+        decimal teste = 0.1m;
+        teste.ToCents();
+
         Assert.AreEqual(27647, result);
-    }
+    }        
 }
