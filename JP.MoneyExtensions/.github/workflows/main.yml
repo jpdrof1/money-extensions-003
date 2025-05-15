@@ -1,0 +1,35 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy NuGet Package to NuGet.org
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Set up .NET Core //Instaling .Net
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.x'
+          include-prerelease: true
+
+      - name: Build with dotnet
+        run: dotnet build --configuration Release
+
+      - name: Test
+        run: dotnet test
+
+      - name: Create the package
+        run: dotnet pack --configuration Release
+
+      - name: Publish NuGet package to NuGet.org
+        run: dotnet nuget push "JP.MoneyExtensions/bin/Release/*.nupkg" -k ${{ secrets.NUGET_MONEY_EXTENSIONS_TOKEN_003 }} -s https://api.nuget.org/v3/index.json
